@@ -45,8 +45,12 @@ and open the template in the editor.
                 
                 while (posicao !== -1){
                     delete lista[posicao];
-                    posicao = lista.indexOf(valor);   
-                    document.getElementById("result").innerHTML = lista.join("  ");
+                    posicao = lista.indexOf(valor); 
+                    
+                    var organizar = lista.join("  ")
+                    document.getElementById("result").innerHTML = organizar;
+                    document.getElementById("exclui").value = "";
+                    document.getElementById("exclui").focus();
                 }
                 
                 
