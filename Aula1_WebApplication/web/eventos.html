@@ -9,24 +9,43 @@ and open the template in the editor.
         <title>Eventos</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .esquerda{
+            float: left;
+        }
+    </style>
+        
     </head>
+       
     <body>
-        <div style="margin-bottom: -10px">
-            <label>Nome: </label>
-            <input type="text" id="nome" onfocus="ganhaFoco(this)" onblur="perdeFoco(this)"/>
+        <div style="margin-right: 4px; margin-bottom: -10px;" class="esquerda">
+            
+            <input type="text" id="nome" placeholder="Nome" onkeyup="lerDados()"/>
+            
         </div>  
-        <br />
-        <div>
-            <label>Sobrenome: </label>
-            <input type="text" id="sobrenome" onfocus="ganhaFoco(this)" onblur="perdeFoco(this)"/>
+        <p id="char"></p>
+        <!--<br />
+        <div style="margin-bottom: 10px">
+            
+            <input type="text" id="sobrenome" placeholder="Sobrenome" onfocus="ganhaFoco(this)" onblur="perdeFoco(this)" onkeypress="lerDados()"/>
         </div>
         
+        <div>
+            
+            <input type="number" id="idade" placeholder="Idade" onfocus="ganhaFoco(this)" onblur="perdeFoco(this)"/>
+        </div>-->
         <script>
-            function ganhaFoco(el){
+            /*function ganhaFoco(el){
                 el.style.background = "red";
             }
             function perdeFoco(el){
                 el.style.background = "yellow";
+            }*/
+            
+            function lerDados(){
+                var nome = document.getElementById("nome").value;
+                var tamanho = nome.length;
+                document.getElementById("char").innerHTML = tamanho;
             }
         </script>
     </body>
