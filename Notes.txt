@@ -1,0 +1,19 @@
+Acessar o link para baixar apache tomcat("Servidor")
+
+https://tomcat.apache.org/download-80.cgi
+
+
+Usando interface Apache NetBeans IDE 11.2
+
+
+
+
+
+
+
+
+
+14:29 07/11/2020
+
+
+
