@@ -25,23 +25,20 @@ and open the template in the editor.
         <hr />
         
         <p>Olá mundo</p>
-        
-        <input type="button" value="trocar classe"  />
+        <input type="text" placeholder="Valor1" id="nome" />
+        <button> Trocar valores </button>
+        <input type="text" placeholder="Valor2" id="nome2" />
         
         <script> 
             $(document).ready(function(){
-              $("input").click(function(){
-                
-                
+              $("button").click(function(){
+                var x = $("#nome").val();
+                $("#nome2").val(x);
+                $("#nome").val("");
+                $("#nome").focus();
               });
             });
         </script> 
-        <script>
-            //function trocar(){
-                var txt = document.getElementById("p1");
-            //    alert(txt); 
-            //}
-          
-        </script>
+        
     </body>
 </html>
