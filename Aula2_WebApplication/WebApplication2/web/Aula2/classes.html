@@ -9,44 +9,47 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+    
         <style>
             .red{
                 background: red;
             }
-            
         </style>
-                        
     </head>
     <body>
         <div>Classes</div>
-        <hr />
-        <p class="red">Parágrafo 1</p>
-        <p>Parágrafo 2</p>
-        <p class="red">Parágrafo 3</p>
-        <p>Parágrafo 4</p>
+        <p class="red">Paragrafo 1</p>
+        <p>Paragrafo 2</p>
+        <p class="red">Paragrafo 3</p>
+        <p>Paragrafo 4</p>
         
-        <p id="quantidade"></p>
         <hr />
-        
         <input type="button" value="selecionar" onclick="pegarTodos()" />
         <input type="button" value="selecionar por classe" onclick="pegarClasses()" />
         
+       <hr />
+       
+        <p id="result"></p>
+         
         <script>
+            
             function pegarTodos(){
-                var tag = document.getElementsByTagName("p");
-                alert(tag.length);
+                var ps = document.getElementsByTagName("p")
+                var texto = "";
+                document.getElementById("result").innerHTML = ""
+                for (i=0 ; i <ps.length; i++ ){
+                texto = texto + ps[i].innerHTML + "<br />"
             }
+            document.getElementById("result").innerHTML = texto
+    }
             
             function pegarClasses(){
-                var classes = document.getElementsByClassName("red");
-                
-                var msg = "Quantidade é" + calsses.length;
-                
-                document.getElementById("quantidade").innerHTML = msg;
-                
-                //alert(classes.length);
+                var pc = document.getElementsByClassName("red")
+                document.getElementById("result").innerHTML = ""
+                for (i = 0; i < pc.length; i++ ){
+                    document.getElementById("result").innerHTML += pc[i].innerHTML + "<br />"
+                }
             }
-        </script>            
+        </script>
     </body>
 </html>
