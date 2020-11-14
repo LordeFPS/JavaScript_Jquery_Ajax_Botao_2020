@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            
+            .livre{ background: greenyellow;}
+            .ocupado { background: red;}
+           
+        </style>
+    
+    </head>
+    <body>
+        <div>Cinema</div>
+        <hr />
+                
+        <input type="number" placeholder="Total de Cadeiras" id="cadeiras"/>
+        <input type="button" value="OK" onclick="criarBotao();verLivres()"/>
+        
+        <hr />
+        
+        
+        <div id="main">
+            
+        </div>
+        
+        <p id="info">
+            
+        </p>
+        
+        <script>
+            function criarBotao(){
+                
+                var cadeiras = document.getElementById("cadeiras").value;
+                //debugger;
+                for (i = 0; i < cadeiras; i++){
+                                        
+                    var botao = document.createElement("input");
+                        botao.setAttribute("type", "button");                   
+                        botao.setAttribute("value", (i + 1));
+                        botao.setAttribute("class", "livre");
+                        botao.setAttribute("onclick", "clique(this)");
+                    
+                    var main = document.getElementById("main");
+                    main.appendChild(botao);
+                                      
+                }
+                var linha = document.createElement("hr");
+                main.appendChild(linha);
+                       
+                /*var livres = document.createTextNode("Cadeiras livres: " + cadeiras);
+                main.appendChild(livres);
+                
+                var pula_linhas = document.createElement("br");
+                main.appendChild(pula_linhas);
+                
+                var ocupadas = document.createTextNode("Cadeiras ocupadas: ");
+                main.appendChild(ocupadas);*/
+            }
+            
+            function verLivres(){
+                
+                var livre = document.getElementsByClassName("livre");
+                var ocupado = document.getElementsByClassName("ocupado")
+                var msg = "Cadeiras livres: " + livre.length;
+                    msg += "<br />";
+                    msg += "Cadeiras ocupadas: " + ocupado.length;
+                    
+                document.getElementById("info").innerHTML = msg;
+                                    
+            }
+            
+            function clique(el){
+                var classeAtual = el.getAttribute("class");
+                
+                if(classeAtual === "livre"){
+                    el.setAttribute("class","ocupado");
+                }else {
+                    el.setAttribute("class", "livre");
+                }
+                verLivres();
+                
+            }
+        </script>
+    </body>
+</html>

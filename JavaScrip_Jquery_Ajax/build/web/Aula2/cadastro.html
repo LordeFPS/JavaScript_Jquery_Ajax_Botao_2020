@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            red{background: red}
+        </style>
+    </head>
+    <body>
+        <input type="button" value="criar" onclick="criar()" />
+        <input type="button" value="Gerar cadastro" onclick="criarCadastro()" />
+        <hr/>
+        <div id="main">
+            
+        </div>
+        
+        <script>
+            function criar(){
+                var p = document.createElement("p");
+                var txt = document.createTextNode("Ola mundo");
+                p.appendChild(txt);
+                var mae = document.getElementById("main");
+                mae.appendChild(p);
+            }
+            
+            function criarCadastro(){
+                var l = document.createElement("label");
+                var txt = document.createTextNode("Insira seu nome");
+                l.appendChild(txt);
+                
+                var mae = document.getElementById("main");
+                mae.appendChild(l);
+                
+                var linha = document.createElement("br");
+                mae.appendChild(linha);
+                
+                // criar input
+                var entrada = document.createElement("input");
+                mae.appendChild (entrada);
+                entrada.setAttribute("id", "n1");
+               
+                var l2 = document.createElement("br");
+                mae.appendChild(l2);
+               
+                //criar botao
+                var bt = document.createElement("input");
+                mae.appendChild (bt);
+                bt.setAttribute("value", "confirma");
+                bt.setAttribute("type", "button");
+                bt.setAttribute("onclick", "lerdados()");
+                bt.setAttribute("style", "background: red")
+                
+            }
+            
+            function lerdados(){
+                
+                var x = document.getElementById("n1").value;
+                
+                alert(x);
+                
+            }
+        </script>
+    </body>
+</html>
