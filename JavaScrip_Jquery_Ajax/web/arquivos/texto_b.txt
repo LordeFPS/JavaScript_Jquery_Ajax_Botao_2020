@@ -1,0 +1,11 @@
+<h1> Lista de itens pro churrasco </h1>
+<hr />
+<ul>
+    <li> 3 kilos de alcatra</li>
+    <li> 3 litros de cerveja</li>
+    <li> 4 doideras</li>
+</ul>
+
+<br />
+
+<img src="" />
