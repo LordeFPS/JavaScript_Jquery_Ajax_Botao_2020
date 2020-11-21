@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Testando Inputs</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+        <style>
+            .estiloLabelRadio{color: aqua}
+        </style>
+        
+    </head>
+    <body>
+        <div>Fazendo inputs</div>
+        
+        <hr/>
+        
+        <input type="text" placeholder="Nome"/>
+        <input type="password" placeholder="Senha"/>
+        
+        <br/>
+        
+        <input id="f" type="radio" value="F" name="sexo"/>
+        <label for="f" class="estiloLabelRadio">Feminino</label>
+        <input id="m" type="radio" value="M" name="sexo"/>
+        <label for="m" class="estiloLabelRadio">Masculino</label>
+        
+        <br />
+        
+        <input type="button" value="Salvar" />
+        
+        
+        <script>
+            $(document).ready(function(){
+                $(":button").click(function(){
+                  $(":radio").hide();
+                  $(".estiloLabelRadio").hide();
+                });
+              });
+        </script>
+        
+        
+        
+    </body>
+</html>
