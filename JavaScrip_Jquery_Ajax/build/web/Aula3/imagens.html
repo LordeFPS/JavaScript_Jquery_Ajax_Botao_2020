@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Imagens</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            
+        </style>
+        
+    </head>
+    <body>
+        <div>Imagens</div>
+        <hr />
+        
+        <img src="../imagens/carro1.jpg" width="300px" alt="Carro 1"/>
+        
+        <button>Trocar imagem</button>
+        
+        <script>
+            $(document).ready(function (){
+                var clique = 1;
+                $("button").click(function (){
+                    if (clique === 1){
+                        $("img").attr("src","../imagens/carro2.jpg");
+                        clique = 0;
+                    }else{
+                        $("img").attr("src","../imagens/carro1.jpg");
+                        clique = 1;
+                    }
+                });
+                
+            });
+        </script>
+    </body>
+</html>
