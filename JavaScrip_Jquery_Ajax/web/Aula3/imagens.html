@@ -11,7 +11,16 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <style>
+            img{
+                width: 300px;
+                height: 200px;
+            }
             
+            #big{
+                width: 600px;
+                height: 400px;
+                margin-left: 500px;
+            }
         </style>
         
     </head>
@@ -19,12 +28,18 @@ and open the template in the editor.
         <div>Imagens</div>
         <hr />
         
-        <img src="../imagens/carro1.jpg" width="300px" alt="Carro 1"/>
+        <img src="../imagens/carro1.jpg" alt="Carro 1"/>
+        <img src="../imagens/carro2.jpg" alt="Carro 1"/>
+        <img src="../imagens/carro3.jpg" alt="Carro 1"/>
+        
         
         <button>Trocar imagem</button>
         
+        <hr />
+        
+        <img id="big" src="" alt="Sem imagem"/>
         <script>
-            $(document).ready(function (){
+            /*$(document).ready(function (){
                 var clique = 1;
                 $("button").click(function (){
                     if (clique === 1){
@@ -36,6 +51,13 @@ and open the template in the editor.
                     }
                 });
                 
+            });*/
+            $(document).ready(function (){
+                $("img").mouseover(function (){
+                    var x = $(this).attr("src");
+                    //alert(x);
+                    $("#big").attr("src",x);
+                });
             });
         </script>
     </body>
