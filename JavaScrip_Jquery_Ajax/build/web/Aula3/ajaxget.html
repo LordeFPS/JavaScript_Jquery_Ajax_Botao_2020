@@ -20,8 +20,14 @@ and open the template in the editor.
     <body>
         <div>Ajax GET</div>
         <hr />
+        
         <button>Abrir</button>
+        
         <div id="texto"></div>
+        
+        <hr />
+        
+        <p></p>
         
         <script>
             $(document).ready(function (){
@@ -29,13 +35,19 @@ and open the template in the editor.
                   $.get("../arquivos/texto.txt", function (data, status){
                       if (status === "success"){
                           $("#texto").html(data);
+                          $("p").html("<b>Arquivo consultado com sucesso!</b>")
+                      }else{
+                          $("p").html("<b>Arquivo não encontrado!</b>")
                       }
                       
                   });
                   $.get("../imagens/carro2.jpg", function (data, status){
                      if (status === "success"){
                          $("img").attr("src","../imagens/carro2.jpg");
-                     } 
+                         $("p").html("<b>Arquivo consultado com sucesso!</b>");
+                      }else{
+                          $("p").html("<b>Arquivo não encontrado!</b>");
+                      }
                   });
                });
             });
