@@ -15,20 +15,48 @@ and open the template in the editor.
             .left{
                 float: left;
             }
-            
+            .center{
+                margin-top: 75px;
+                margin-left: 500px;
+            }
+            .bottom{
+                float: bottom;
+            }
+            img{
+                width: 300px;
+                height: 200px;
+            }
         </style>
     
     </head>
     <body>
         <div>Exercício de Times</div>
         <hr />
-        <div class="left">
-            <input type="number" placeholder="Time A" />
-            
-        </div>
-        <div class="left" style="margin-left: 8px">
-            <input type="number" placeholder="Time B" />
-            
-        </div>
+        
+        <input id="time_a" type="number" placeholder="Time A" />
+        <input id="time_b" type="number" placeholder="Time B" />
+        <hr />
+        <img src="" alt="Sem"/>
+        <p ></p>
+       
+        <script>
+            $(document).ready(function (){
+                //Evento blur "ativa" quando sai dele
+                $("input").blur(function (){
+                    var time_a = $("#time_a").val();
+                    var time_b = $("#time_b").val();
+                    
+                    if (time_a > time_b){
+                        $("img").attr("src","../imagens/time_a.png");
+                        $("p").load("../arquivos/texto_a.txt");
+                    }else {
+                        $("img").attr("src","../imagens/time_b.png");
+                        $("p").load("../arquivos/texto_b.txt");
+                    }
+                }); 
+                
+            });
+        </script>
+    
     </body>
 </html>
