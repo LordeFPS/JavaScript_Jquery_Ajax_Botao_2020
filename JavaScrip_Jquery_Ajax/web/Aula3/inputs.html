@@ -13,8 +13,10 @@ and open the template in the editor.
         <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         
         <style>
-            .estiloLabelRadio{color: aqua}
+            .estiloLabelRadioM{color: blue}
+            .estiloLabelRadioF{color: pink}
         </style>
+        
         
     </head>
     <body>
@@ -28,9 +30,9 @@ and open the template in the editor.
         <br/>
         
         <input id="f" type="radio" value="F" name="sexo"/>
-        <label for="f" class="estiloLabelRadio">Feminino</label>
+        <label for="f" class="estiloLabelRadioF">Feminino</label>
         <input id="m" type="radio" value="M" name="sexo"/>
-        <label for="m" class="estiloLabelRadio">Masculino</label>
+        <label for="m" class="estiloLabelRadioM">Masculino</label>
         
         <br />
         
@@ -41,7 +43,10 @@ and open the template in the editor.
             $(document).ready(function(){
                 $(":button").click(function(){
                   $(":radio").hide();
-                  $(".estiloLabelRadio").hide();
+                  //$(":radio#f").hide(); Serve para selecionar o Feminino
+                  //$(":radio#m").hide(); Serve para selecionar o Masculino
+                  $(".estiloLabelRadioF").hide();
+                  $(".estiloLabelRadioM").hide()();
                 });
               });
         </script>

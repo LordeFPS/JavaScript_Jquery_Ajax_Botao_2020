@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Valores</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <div>Valores</div>
+        <hr />
+        
+        <input type="text" id="nome" placeholder="Nome"/>
+        <input type="text" id="rnome" placeholder="Resultado" readonly />
+        
+        <p id="p1">Olá mundo.text</p>
+        <p id="p2">Olá mundo.html</p>
+        
+        <button>Clique aqui</button>
+        
+        <script>
+            $(document).ready(function (){
+               $("button").click(function (){
+                  var valor = $("#nome").val();
+                  $("#rnome").val(valor);
+                  $("#nome").focus();
+                  $("#nome").val("");
+                  
+                  $("#p1").text("<b>Olá Mundo.text</b>");
+                  $("#p2").html("<b>Olá Mundo.html</b>");
+               });
+            });
+        </script>
+        
+    </body>
+</html>

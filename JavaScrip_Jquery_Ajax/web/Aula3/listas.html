@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Listas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            .blue{color: blue}
+            .red{color: red}
+        </style>
+    </head>
+    <body>
+        <div>Criando Listas</div>
+        <hr />
+        
+        <div>Lista 1</div>
+        <ul id="l1">
+            <li>Um</li>
+            <li>Dois</li>
+            <li>Três</li>
+        </ul>
+        
+        <div>Lista 2</div>
+        <ul id="l2" class="blue">
+            <li>Um</li>
+            <li>Dois</li>
+            <li>Três</li>
+        </ul>
+        
+        <button id="bt1">Esconde 1º item</button>
+        <button id="bt2">Eesconde 1º de cada item</button>
+        <button id="bt3">Adiciona CSS ao item</button>
+        
+        <script>
+            $(document).ready(function (){
+                $("#bt1").click(function (){
+                    $("ul li:first-child").toggle(":hidden");
+                });
+                
+                $("#bt2").click(function (){
+                    $("ul.blue").removeClass("blue");
+                    $("ul").toggleClass("red");
+                    $("ul#l2").addClass("blue"); 
+                });
+                
+                $("#bt3").click(function (){
+                    $("ul li:first").css({"color":"yellow","font-size":"28px"});
+                });
+            });
+            
+            
+        </script>
+    
+    </body>
+</html>
